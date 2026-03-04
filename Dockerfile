@@ -8,7 +8,7 @@ RUN rm -rf /usr/share/nginx/html/*
 COPY index.html /usr/share/nginx/html/
 COPY style.css /usr/share/nginx/html/
 COPY script.js /usr/share/nginx/html/
-COPY images /usr/share/nginx/html/images
+COPY img /usr/share/nginx/html/images
 COPY package.json /usr/share/nginx/html/packages
 COPY 20240210_214816.jpg /usr/share/nginx/html/images/20240210_214816.jpg
 
