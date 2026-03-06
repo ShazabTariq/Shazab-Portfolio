@@ -51,3 +51,4 @@ jobs:
              docker rm myportfolio || true
            docker run -d -p 3030:3000 --name myportfolio ${{ secrets.DOCKER_USERNAME }}/portfolio:latest
           EOF
+          
