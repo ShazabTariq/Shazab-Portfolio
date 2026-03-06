@@ -45,7 +45,7 @@ jobs:
 
       - name: Deploy to VM
         run: |
-          ssh -o StrictHostKeyChecking=no mate@10.128.0.13 << 'EOF'
+          ssh -o StrictHostKeyChecking=no mate@35.224.82.70 << 'EOF'
             docker pull ${{ secrets.DOCKER_USERNAME }}/portfolio:latest
              docker stop myportfolio || true
              docker rm myportfolio || true
