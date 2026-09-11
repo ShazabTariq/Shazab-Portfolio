@@ -1,314 +1,1058 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Shazab Tariq | Senior Software Engineer | Full Stack Developer</title>
+  <meta name="description" content="Shazab Tariq — Senior Software Engineer and backend-focused Full Stack Developer with 3+ years building production fintech platforms using Node.js, Express.js, React, Next.js and TypeScript, with GCP/Kubernetes DevOps and blockchain integration.">
+  <meta name="keywords" content="Shazab Tariq, Senior Software Engineer, Full Stack Developer, Node.js, Express.js, React.js, Next.js, TypeScript, Fintech, Kubernetes, GCP, Blockchain, Starknet, Pakistan">
+  <meta name="author" content="Shazab Tariq">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0b0f16">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Shazab Tariq | Senior Software Engineer | Full Stack Developer">
+  <meta property="og:description" content="Backend-focused Full Stack Developer building fintech platforms, cloud infrastructure and blockchain-integrated applications.">
+  <meta property="og:image" content="img/shazab-portrait.jpg">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Shazab Tariq | Senior Software Engineer">
+  <meta name="twitter:description" content="Backend-focused Full Stack Developer building fintech platforms, cloud infrastructure and blockchain-integrated applications.">
+  <meta name="twitter:image" content="img/shazab-portrait.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <!--
+    Runs before first paint: applies the saved theme so light mode never flashes
+    dark, and marks the document as scripted so scroll-reveal only hides content
+    when JavaScript is actually available.
+  -->
+  <script>
+    (function () {
+      document.documentElement.classList.add('js');
+      try {
+        if (localStorage.getItem('st-theme') === 'light') {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) { /* storage blocked — dark default stands */ }
+    })();
+  </script>
 </head>
+
 <body>
-   <!-- sadassaas -->
-    <!-- dsadasdasdadasd -->
-     <!-- dsfdsfdsfsdfsd -->
-    
-    <header class="header">
-        <a href="#home" class="logo">Shazab
-            <span>Tariq</span>
-        </a>
-        <i class="bx bx-menu" id="menu-icon"></i>
-        <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#education">Education</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-    
-<section class="home" id="home">
-    <div class="home-content">
-        <h1>Hi, Its <span>Shazab</span></h1>
-        <h3 class="text-animation">I'm a <span></span></h3>
-        <p>Hello! I'm an experienced Full Stack Developer with a passion for creating intelligent and scalable web applications. My expertise spans across the entire stack, from front-end interfaces to back-end logic, to enhance user experiences and optimize processes...</p>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-        <div class="social-icons">
-            <a href="https://www.facebook.com/muhammad.shazab.140" target="_blank"><i class="bx bxl-facebook"></i></a>
-            <a href="https://x.com/shazabtariq6517"><i class="bx bxl-twitter"></i></a>
-            <a href="#"><i class="bx bxl-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/shazab-tariq-4648b22a9/"><i class="bx bxl-linkedin"></i></a>
-            <a href="https://github.com/ShazabTariq"><i class="bx bxl-github"></i></a>
-        </div>
-        <div class="btn-group">
-            <a href="https://wa.me/923477786221" class="btn">Hire</a>
-            <a href="https://wa.me/923094055450" class="btn">Contact</a>
-        </div>
-        
+  <!-- ============================= HEADER ============================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="#home" class="logo" aria-label="Shazab Tariq — home">
+        <span class="logo-mark" aria-hidden="true">ST</span>
+        <span class="logo-text">Shazab<strong>Tariq</strong></span>
+      </a>
+
+      <nav class="nav" id="primaryNav" aria-label="Primary">
+        <a href="#home" class="nav-link is-active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#products" class="nav-link">Products</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#devops" class="nav-link">DevOps</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="theme-toggle" id="themeToggle" role="switch" aria-checked="true"
+                aria-label="Dark theme">
+          <span class="toggle-track" aria-hidden="true">
+            <span class="toggle-thumb">
+              <i class="bx bxs-moon icon-moon" aria-hidden="true"></i>
+              <i class="bx bxs-sun icon-sun" aria-hidden="true"></i>
+            </span>
+          </span>
+        </button>
+
+        <button type="button" class="menu-btn" id="menuBtn" aria-label="Open navigation menu"
+                aria-expanded="false" aria-controls="primaryNav">
+          <i class="bx bx-menu" aria-hidden="true"></i>
+        </button>
+      </div>
     </div>
-    <div class="home-img">
-        <img src="img/20240210_214816.jpg" alt="dsdasad">
-    </div>
-</section>
+  </header>
+  <div class="nav-overlay" id="navOverlay" hidden></div>
 
+  <main id="main">
 
+    <!-- ============================= HERO ============================= -->
+    <section class="hero" id="home">
+      <div class="hero-glow" aria-hidden="true"></div>
 
-<section class="about-section" id="about">
-    <h2 class="heading">About Me</h2>
-    <div class="container">
-        <div class="profile-container">
-            <div class="profile-left">
-                <img src="img/aaasdsasfsfsf.jpeg" alt="Your Photo">
-                <div class="profile-details">
-                    <h2>Name : Shazab Tariq</h2>
-                    <p>Job Role : Backend developer</p>
-                    <p>Experience: 1 Year</p>
-                    <p>Address: FSD 
-                        punjab, Pakistan</p>
-                    <p>Email: shazabtariq41@gmail.com</p>
-                </div>
-            </div>
-            <div class="profile-right">
-                <h1>About Me</h1>
-                <p> As a Full Stack Web Developer, I have expertise in both front-end and back-end technologies, allowing me to build comprehensive and efficient web applications.</p>
-                <p>On the front-end, I use HTML, CSS, and JavaScript to create intuitive and engaging user interfaces. I am proficient in frameworks like React and Angular, which help in developing complex and dynamic web pages.</p>
-                <p>For the back-end, I utilize Node.js to develop server-side applications, create APIs with Express.js, and manage databases using MongoDB and Mongoose. This ensures that I can handle everything from server management to data storage and retrieval, providing a seamless user experience.</p>
-                <p>My skills in both front-end and back-end development enable me to deliver complete, functional, and dynamic web solutions.</p>
-            </div>
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="eyebrow"><span class="pulse" aria-hidden="true"></span> Senior Software Engineer &middot; Faisalabad, Pakistan</p>
+
+          <h1 class="hero-title">Shazab Tariq</h1>
+          <p class="hero-role">Senior Software Engineer</p>
+          <p class="hero-subrole">Full Stack Developer <span class="sep" aria-hidden="true">|</span> Backend &amp; DevOps</p>
+
+          <p class="hero-desc">
+            Building scalable backend systems, fintech platforms, cloud infrastructure and
+            blockchain-integrated applications.
+          </p>
+
+          <ul class="pillars" aria-label="Core focus areas">
+            <li><i class="bx bx-server" aria-hidden="true"></i> Backend</li>
+            <li><i class="bx bx-credit-card" aria-hidden="true"></i> Fintech</li>
+            <li><i class="bx bx-cloud" aria-hidden="true"></i> Cloud &amp; DevOps</li>
+            <li><i class="bx bx-link-alt" aria-hidden="true"></i> Blockchain</li>
+          </ul>
+
+          <div class="hero-actions">
+            <a href="#products" class="btn btn-primary">View My Work <i class="bx bx-right-arrow-alt" aria-hidden="true"></i></a>
+            <a href="Shazab_Tariq_CV.pdf" class="btn btn-outline" download>Download CV <i class="bx bx-download" aria-hidden="true"></i></a>
+            <a href="#contact" class="btn btn-ghost">Contact Me</a>
+          </div>
+
+          <div class="hero-social">
+            <a href="https://github.com/ShazabTariq" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><i class="bx bxl-github" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/shazab-tariq-4648b22a9" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><i class="bx bxl-linkedin-square" aria-hidden="true"></i></a>
+            <a href="https://x.com/shazabtariq6517" target="_blank" rel="noopener noreferrer" aria-label="X profile"><i class="bx bxl-twitter" aria-hidden="true"></i></a>
+            <a href="https://www.facebook.com/muhammad.shazab.140" target="_blank" rel="noopener noreferrer" aria-label="Facebook profile"><i class="bx bxl-facebook-square" aria-hidden="true"></i></a>
+            <a href="mailto:shazabtariq41@gmail.com" aria-label="Send an email"><i class="bx bx-envelope" aria-hidden="true"></i></a>
+          </div>
         </div>
-        <div class="skill-mf">
-            <p class="title-s">Skills</p>
-            <span>Html</span> <span class="pull-right">90%</span>
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <span>CSS</span> <span class="pull-right">80%</span>
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <span>Javascript</span> <span class="pull-right">70%</span>
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <span>React.js</span> <span class="pull-right">75%</span>
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <span>Nodejs</span> <span class="pull-right">90%</span>
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <span>Database</span> <span class="pull-right">80%</span>
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
+
+        <div class="hero-visual">
+          <div class="avatar-ring">
+            <img src="img/shazab-portrait.jpg" alt="Portrait of Shazab Tariq, Senior Software Engineer"
+                 width="800" height="800" fetchpriority="high" decoding="async">
+          </div>
+          <span class="float-badge badge-a"><i class="bx bx-code-alt" aria-hidden="true"></i> Node.js &amp; Express.js</span>
+          <span class="float-badge badge-b"><i class="bx bx-cloud" aria-hidden="true"></i> GCP &amp; Kubernetes</span>
         </div>
-        <div class="kuchkuch">
-            <ul class="about-info mt-4 px-md-0 px-2">
-                <li class="d-flex"><span>Profile:</span> <span>Web Developer &amp; Backend Developer</span></li>
-                <li class="d-flex"><span>Projects:</span> <span>E-commerce Website, Pizza Ordering App &amp; Portfolio Website</span></li>
-                <li class="d-flex"><span>Education:</span> <span>Bachelor of Engineering</span></li>
-                <li class="d-flex"><span>Language:</span> <span>English, Urdu</span></li>
-                <li class="d-flex"><span>Technical Skills:</span> <span>React, Node.js, Express &amp; MongoDB, Mongoose</span></li>
-                <li class="d-flex"><span>Additional Skills:</span> <span>DB Management, API Development & Integration, <br> RESTful Services, Testing & Debugging, <br> Responsive Web Design &amp; Styling, Designing</span></li>
-                <li class="d-flex"><span>Interest:</span> <span>Traveling, Learning New Skills, Cricket </span></li>
+      </div>
+
+      <div class="container">
+        <dl class="hero-stats">
+          <div class="stat">
+            <dd class="stat-num">3+</dd>
+            <dt>Years of experience</dt>
+          </div>
+          <div class="stat">
+            <dd class="stat-num">5</dd>
+            <dt>Production fintech platforms</dt>
+          </div>
+          <div class="stat">
+            <dd class="stat-num">5</dd>
+            <dt>Blockchain networks worked with</dt>
+          </div>
+          <div class="stat">
+            <dd class="stat-num stat-word">Backend</dd>
+            <dt>Primary area of ownership</dt>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============================= ABOUT ============================= -->
+    <section class="section" id="about">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">About</p>
+          <h2 class="section-title">The engineer behind the systems</h2>
+          <p class="section-sub">Backend-focused full stack engineer working on live financial products.</p>
+        </header>
+
+        <div class="about-grid">
+          <aside class="about-card reveal">
+            <div class="about-photo">
+              <img src="img/shazab-about.jpg" alt="Shazab Tariq" width="600" height="600" loading="lazy" decoding="async">
+            </div>
+            <h3 class="about-name">Shazab Tariq</h3>
+            <p class="about-tag">Senior Software Engineer</p>
+            <ul class="about-facts">
+              <li><span>Experience</span><span>3+ Years</span></li>
+              <li><span>Focus</span><span>Backend Engineering</span></li>
+              <li><span>Location</span><span>Faisalabad, Punjab, Pakistan</span></li>
+              <li><span>Email</span><a href="mailto:shazabtariq41@gmail.com">shazabtariq41@gmail.com</a></li>
+              <li><span>Phone</span><a href="tel:+923094055450">+92 309 4055450</a></li>
+              <li><span>Languages</span><span>English, Urdu, Punjabi</span></li>
             </ul>
-        </div>
-    </div>
-</div>
-    </div>
-</section>
+          </aside>
 
-
-
-
-<section class="education" id="education">
-    <h2 class="heading">Education</h2>
-    <div class="timeline-items">
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-                <div class="timeline-date">
-                    2018
-                </div>
-                <div class="timeline-content">
-                    <h3>High School</h3>
-                    <p>
-                        Institution: Government High School for Boys 144RB, FSD <br>
-                        Subject: [Science Subjects]<br>
-                        Duration: 2018 - 2020 <br>
-                        Year of Completion: 2020
-                    </p>
-                    
-                </div>
-            
-        </div>
-       
-
-        <div class="timeline-item">
-            <div class="timeline-dot"> </div>
-            
-                <div class="timeline-date">
-                    2020
-                </div>
-                <div class="timeline-content">
-                    <h3>College</h3>
-                    <p> Institution: Govt Post Graduate College of Science, FSD <br>
-                        Program: [Engneering]<br>
-                        Duration: 2020 - 2022 <br>
-                        Year of Completion: 2022</p>
-                    
-                </div>
-           
-        </div>
-      
-        <div class="timeline-item">
-            <div class="timeline-dot"> </div>
-                <div class="timeline-date">
-                    2022
-                </div>
-                <div class="timeline-content">
-                    <h3>University</h3>
-                    <p>Institution: Chenab Group of Advance Studies FSD <br>
-                        Program: [Bachelor of Computer Science]<br>
-                        Duration: 2022 - Present<br>
-                        Expected Year of Completion: 2026 </p>
-                    
-                </div>
-           
-        </div>
-      
-
-        <div class="timeline-item">
-            <div class="timeline-dot"> </div>
-                <div class="timeline-date">
-                    2023
-                </div>
-                <div class="timeline-content">
-                    <h3>Internship</h3>
-                    <p> Institution: Gamica Cloud FSD <br>
-                        Program: [Full Stack Development]<br>
-                        Duration: Jan-2023 - Aug-2023 <br>
-                        Year of Completion:2023</p>
-                </div>
-        </div>
-       
-        <div class="timeline-item">
-            <div class="timeline-dot"> </div>
-                <div class="timeline-date">
-                    2023
-                </div>
-                <div class="timeline-content">
-                    <h3>Job</h3>
-                  <p>Company: Invoice Mate <br>
-                    Job Role: Backend Developer<br>
-                    Joining Date: September 2023<br>
-                    Status: Currently Employed</p>
-                       
-                    
-                </div>
-           
-        </div>
-    </div>
-</section>
-
-<section class="Services" id="services">
-    <h2 class="heading">Services</h2>
-    <div class="Services-container">
-        <div class="service-box">
-            <div class="service-info">
-                <h4>Web development</h4>
-                <p>I’m passionate about technology and design, and I love creating great digital experiences. I build complete web solutions, making sure the front-end looks good and the back-end works well. By blending creativity with technical skills, I make apps that are both attractive and effective, meeting user needs and business goals.</p>
+          <div class="about-body">
+            <div class="prose reveal">
+              <p>
+                I am a <strong>Senior Software Engineer with 3+ years of experience</strong> building production web
+                and financial technology platforms. My core strength is backend engineering in
+                <strong>Node.js and Express.js</strong>, with full-stack delivery using
+                <strong>React.js, Next.js and TypeScript</strong>.
+              </p>
+              <p>
+                Alongside application development I have practical <strong>DevOps and cloud experience</strong>,
+                deploying and maintaining containerized applications on Google Cloud Platform with Docker and
+                Kubernetes.
+              </p>
+              <p>
+                Day to day I work on <strong>invoice financing, real-time payments, settlement workflows, banking
+                integrations and blockchain integration</strong> inside live financial products — which means I own
+                both the engineering and the financial business logic behind it.
+              </p>
             </div>
-        </div>
-     
 
-        <div class="service-box">
-            <div class="service-info">
-                <h4>Frontend development</h4>
-                <p>I specialize in designing responsive and user-friendly web interfaces using HTML, CSS, and JavaScript. By leveraging frameworks like React and Angular, I create visually appealing and interactive web applications. My focus is on delivering a seamless user experience and ensuring that each project meets both aesthetic and functional goals.</p>
+            <div class="highlight-grid">
+              <article class="highlight reveal">
+                <i class="bx bx-server" aria-hidden="true"></i>
+                <h3>Backend Engineering</h3>
+                <p>REST APIs, business logic, authentication &amp; security, event handling and transaction schedulers.</p>
+              </article>
+              <article class="highlight reveal">
+                <i class="bx bx-layout" aria-hidden="true"></i>
+                <h3>Full Stack Delivery</h3>
+                <p>React.js, Next.js and TypeScript features shipped alongside the services that power them.</p>
+              </article>
+              <article class="highlight reveal">
+                <i class="bx bx-credit-card-front" aria-hidden="true"></i>
+                <h3>Fintech &amp; Payments</h3>
+                <p>Invoice financing, Murabaha models, real-time payments and settlement workflows.</p>
+              </article>
+              <article class="highlight reveal">
+                <i class="bx bx-cloud-upload" aria-hidden="true"></i>
+                <h3>DevOps &amp; Cloud</h3>
+                <p>GCP, GKE/Kubernetes, Docker and Linux VMs with secure secret and key management.</p>
+              </article>
+              <article class="highlight reveal">
+                <i class="bx bx-link-alt" aria-hidden="true"></i>
+                <h3>Blockchain / Web3</h3>
+                <p>Smart-contract interaction, blockchain transactions and on-chain event handling.</p>
+              </article>
+              <article class="highlight reveal">
+                <i class="bx bx-plug" aria-hidden="true"></i>
+                <h3>Integrations</h3>
+                <p>Banking and third-party integrations including Mansa, Effie and Fuze.</p>
+              </article>
             </div>
+          </div>
         </div>
-          
-            <div class="service-box">
-                <div class="service-info">
-                    <h4>Backend development</h4>
-                    <p>I craft scalable server-side applications using Node.js and Express.js, focusing on powerful and efficient solutions. By designing APIs with REST and GraphQL and managing databases with Mongoose, I ensure robust and seamless integration with web applications. My goal is to build backend systems that drive performance and innovation while maintaining smooth operations.</p>
+      </div>
+    </section>
+
+    <!-- ============================= EXPERIENCE ============================= -->
+    <section class="section section-alt" id="experience">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">Experience</p>
+          <h2 class="section-title">Professional timeline</h2>
+          <p class="section-sub">Three years of shipping backend services for production platforms.</p>
+        </header>
+
+        <ol class="timeline">
+          <li class="tl-item reveal">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <article class="tl-card">
+              <div class="tl-head">
+                <div class="tl-headings">
+                  <h3 class="tl-role">Senior Software Developer / Senior Software Engineer</h3>
+                  <p class="tl-company"><i class="bx bx-buildings" aria-hidden="true"></i> Mate-Sol &middot; Faisalabad, Punjab, Pakistan</p>
                 </div>
-            </div>
-          
-         
-            <div class="service-box">
-                <div class="service-info">
-                    <h4>Database Management</h4>
-                    <p>I specialize in using MongoDB for managing large amounts of unstructured data, focusing on creating efficient schemas and ensuring data integrity. While MongoDB is my main tool, I also work with SQL databases for structured data needs. My goal is to use both technologies to provide strong and effective data solutions.</p>
+                <span class="tl-period is-current">Sep 2023 &ndash; Present</span>
+              </div>
+
+              <p class="tl-summary">
+                Backend engineering ownership across five production fintech platforms — DeFa, CredMate,
+                InvoiceMate, PSP and SettleMate.
+              </p>
+
+              <button class="tl-toggle" type="button" aria-expanded="true" aria-controls="exp-matesol">
+                <span class="tl-toggle-label">Hide responsibilities</span>
+                <i class="bx bx-chevron-down" aria-hidden="true"></i>
+              </button>
+
+              <div class="tl-details" id="exp-matesol">
+                <ul class="bullets">
+                  <li>Build and maintain backend services and REST APIs in Node.js and Express.js across five production fintech platforms: DeFa, CredMate, InvoiceMate, PSP and SettleMate.</li>
+                  <li>Implement financial business logic covering invoice financing, Murabaha models, conversion models, financing requests, real-time payments and settlement workflows.</li>
+                  <li>Deliver full-stack features using React.js, Next.js and TypeScript, with backend engineering as the primary area of ownership.</li>
+                  <li>Develop banking and third-party integrations including Mansa, Effie and Fuze, as well as integrations between internal company platforms.</li>
+                  <li>Integrate blockchain functionality into financial products — transaction workflows, smart-contract interaction and on-chain event handling across Ethereum, Stellar, Starknet, ZigChain and EVM.</li>
+                  <li>Deploy and support containerized applications on GCP and Kubernetes, and investigate and resolve production issues across services and environments.</li>
+                </ul>
+                <div class="tag-row">
+                  <span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">REST APIs</span>
+                  <span class="tag">React.js</span><span class="tag">Next.js</span><span class="tag">TypeScript</span>
+                  <span class="tag">MongoDB</span><span class="tag">GCP</span><span class="tag">Kubernetes</span>
+                  <span class="tag">Docker</span><span class="tag">Blockchain</span>
                 </div>
-            </div>
-    </div>
-</section>
+              </div>
+            </article>
+          </li>
 
+          <li class="tl-item reveal">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <article class="tl-card">
+              <div class="tl-head">
+                <div class="tl-headings">
+                  <h3 class="tl-role">Software Developer</h3>
+                  <p class="tl-company"><i class="bx bx-buildings" aria-hidden="true"></i> Synergic Professionals Limited (SPL) &middot; Faisalabad, Pakistan</p>
+                </div>
+                <span class="tl-period">Jan 2023 &ndash; Sep 2023</span>
+              </div>
 
+              <p class="tl-summary">
+                Full stack development on the company&rsquo;s web applications, with backend features and REST APIs
+                as the main contribution.
+              </p>
 
-<section class="contact" id="contact">
-    <h2 class="heading">Contact <span>Me</span></h2>
-     <form action="">
-        <div class="input-group">
-            <div class="input-box">
-               <input type="text"
-               placeholder="Full Name">
-               <input type="email"
-               placeholder="Email">
+              <button class="tl-toggle" type="button" aria-expanded="false" aria-controls="exp-spl">
+                <span class="tl-toggle-label">Show responsibilities</span>
+                <i class="bx bx-chevron-down" aria-hidden="true"></i>
+              </button>
+
+              <div class="tl-details" id="exp-spl" hidden>
+                <ul class="bullets">
+                  <li>Developed backend features and REST APIs using Node.js, Express.js and MongoDB for the company&rsquo;s web applications.</li>
+                  <li>Built and maintained frontend interfaces using React, JavaScript, HTML5 and CSS3.</li>
+                  <li>Implemented database models and queries.</li>
+                  <li>Resolved defects across both backend and frontend layers.</li>
+                </ul>
+                <div class="tag-row">
+                  <span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">MongoDB</span>
+                  <span class="tag">React</span><span class="tag">JavaScript</span><span class="tag">HTML5</span><span class="tag">CSS3</span>
+                </div>
+              </div>
+            </article>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================= KEY PRODUCTS ============================= -->
+    <section class="section" id="products">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">Key Products</p>
+          <h2 class="section-title">Production fintech platforms</h2>
+          <p class="section-sub">
+            Five live products built at Mate-Sol, spanning invoice financing, payments, settlement and on-chain workflows.
+          </p>
+        </header>
+
+        <div class="product-grid">
+
+          <article class="product-card reveal">
+            <div class="product-top">
+              <span class="product-icon" aria-hidden="true"><i class="bx bx-network-chart"></i></span>
+              <div>
+                <h3 class="product-name">DeFa</h3>
+                <p class="product-domain">DeFi Financing</p>
+              </div>
             </div>
-            <div class="input-box">
-                <input type="number"
-                placeholder="Phone Number">
-                <input type="text"
-                placeholder="Subject">
+            <p class="product-desc">
+              DeFi-oriented financing platform built around financing facilities, pools and on-chain workflows.
+            </p>
+            <h4 class="product-label">My contribution</h4>
+            <ul class="bullets">
+              <li>Backend services and REST APIs for facility management.</li>
+              <li>DeFa pool creation and pool workflows.</li>
+              <li>Blockchain transaction workflows and transaction schedulers.</li>
+              <li>On-chain event handling and smart-contract interaction across Ethereum, Stellar, Starknet and ZigChain.</li>
+              <li>Frontend and DevOps/cloud contribution alongside core backend development.</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">REST APIs</span>
+              <span class="tag">Ethereum</span><span class="tag">Stellar</span><span class="tag">Starknet</span>
+              <span class="tag">ZigChain</span><span class="tag">Smart Contracts</span><span class="tag">GCP</span>
             </div>
+          </article>
+
+          <article class="product-card reveal">
+            <div class="product-top">
+              <span class="product-icon" aria-hidden="true"><i class="bx bxs-bank"></i></span>
+              <div>
+                <h3 class="product-name">CredMate</h3>
+                <p class="product-domain">Credit &amp; Invoice Financing</p>
+              </div>
+            </div>
+            <p class="product-desc">
+              Credit and invoice-financing platform used within banking and financial workflows.
+            </p>
+            <h4 class="product-label">My contribution</h4>
+            <ul class="bullets">
+              <li>Backend development and financial business logic.</li>
+              <li>Murabaha models and conversion-model workflows.</li>
+              <li>Platform functionality for banking partners including BankIslami, with partial involvement in Soneri Bank related work.</li>
+              <li>Frontend features in React.js, Next.js and TypeScript.</li>
+              <li>Starknet smart-contract integration with on-chain invoice functionality.</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">React.js</span>
+              <span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Starknet</span>
+              <span class="tag">Murabaha</span><span class="tag">Banking Integration</span>
+            </div>
+          </article>
+
+          <article class="product-card reveal">
+            <div class="product-top">
+              <span class="product-icon" aria-hidden="true"><i class="bx bx-receipt"></i></span>
+              <div>
+                <h3 class="product-name">InvoiceMate</h3>
+                <p class="product-domain">Invoice Financing</p>
+              </div>
+            </div>
+            <p class="product-desc">
+              Invoice-financing platform digitising invoice submission, financing requests and financing decisions.
+            </p>
+            <h4 class="product-label">My contribution</h4>
+            <ul class="bullets">
+              <li>Backend services, REST APIs and database structures.</li>
+              <li>Invoice financing, Murabaha models and conversion-model logic.</li>
+              <li>Banking and payment integration with Zindigi Bank.</li>
+              <li>Starknet smart-contract integration for on-chain invoice functionality.</li>
+              <li>Frontend features in React.js, Next.js and TypeScript, with supporting DevOps and cloud work.</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">MongoDB</span>
+              <span class="tag">React.js</span><span class="tag">Next.js</span><span class="tag">TypeScript</span>
+              <span class="tag">Starknet</span><span class="tag">Zindigi Bank</span><span class="tag">GCP</span>
+            </div>
+          </article>
+
+          <article class="product-card reveal">
+            <div class="product-top">
+              <span class="product-icon" aria-hidden="true"><i class="bx bx-transfer-alt"></i></span>
+              <div>
+                <h3 class="product-name">PSP</h3>
+                <p class="product-domain">Payment Service Platform</p>
+              </div>
+            </div>
+            <p class="product-desc">
+              Payment service platform handling payment processing and provider integrations. Backend-focused role.
+            </p>
+            <h4 class="product-label">My contribution</h4>
+            <ul class="bullets">
+              <li>Backend services and REST APIs for real-time payment workflows.</li>
+              <li>Payment processing and transaction handling.</li>
+              <li>Mansa and Effie integrations.</li>
+              <li>EVM-based blockchain functionality within payment workflows.</li>
+              <li>Third-party API integrations, database work and production debugging of payment issues.</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">REST APIs</span>
+              <span class="tag">Mansa</span><span class="tag">Effie</span><span class="tag">EVM</span>
+              <span class="tag">Real-Time Payments</span>
+            </div>
+          </article>
+
+          <article class="product-card reveal">
+            <div class="product-top">
+              <span class="product-icon" aria-hidden="true"><i class="bx bx-check-double"></i></span>
+              <div>
+                <h3 class="product-name">SettleMate</h3>
+                <p class="product-domain">Settlement &amp; Real-Time Payments</p>
+              </div>
+            </div>
+            <p class="product-desc">
+              Settlement and real-time payment platform connected to PSP infrastructure. Backend-focused role.
+            </p>
+            <h4 class="product-label">My contribution</h4>
+            <ul class="bullets">
+              <li>Backend services and REST APIs implementing settlement workflows.</li>
+              <li>Settlement business logic.</li>
+              <li>Fuze integration for real-time PSP payments and payment transaction handling.</li>
+              <li>Integration of SettleMate with PSP systems.</li>
+              <li>Resolution of production settlement and payment issues.</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">REST APIs</span>
+              <span class="tag">Fuze</span><span class="tag">Settlement Workflows</span><span class="tag">PSP Integration</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= FINTECH DOMAIN ============================= -->
+    <section class="section section-alt" id="fintech">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">Domain Expertise</p>
+          <h2 class="section-title">Fintech &amp; payments</h2>
+          <p class="section-sub">
+            Engineering plus financial product logic — the workflows I have implemented inside live financial platforms.
+          </p>
+        </header>
+
+        <div class="domain-grid">
+          <article class="domain-card reveal">
+            <i class="bx bx-file" aria-hidden="true"></i>
+            <h3>Invoice Financing</h3>
+            <p>Invoice submission, financing requests and financing decisions digitised end to end.</p>
+          </article>
+          <article class="domain-card reveal">
+            <i class="bx bx-book-open" aria-hidden="true"></i>
+            <h3>Murabaha Workflows</h3>
+            <p>Islamic-finance Murabaha models implemented in backend business logic.</p>
+          </article>
+          <article class="domain-card reveal">
+            <i class="bx bx-transfer" aria-hidden="true"></i>
+            <h3>Conversion Models</h3>
+            <p>Conversion-model logic powering financing products across CredMate and InvoiceMate.</p>
+          </article>
+          <article class="domain-card reveal">
+            <i class="bx bx-send" aria-hidden="true"></i>
+            <h3>Financing Requests</h3>
+            <p>Request lifecycles from submission through decisioning inside financing platforms.</p>
+          </article>
+          <article class="domain-card reveal">
+            <i class="bx bx-time-five" aria-hidden="true"></i>
+            <h3>Real-Time Payments</h3>
+            <p>Real-time payment workflows and transaction handling across PSP and SettleMate.</p>
+          </article>
+          <article class="domain-card reveal">
+            <i class="bx bx-check-double" aria-hidden="true"></i>
+            <h3>Settlement Workflows</h3>
+            <p>Settlement business logic and settlement processing connected to PSP infrastructure.</p>
+          </article>
+          <article class="domain-card reveal">
+            <i class="bx bxs-bank" aria-hidden="true"></i>
+            <h3>Banking Integrations</h3>
+            <p>Banking partner work including BankIslami and Zindigi Bank integrations.</p>
+          </article>
+          <article class="domain-card reveal">
+            <i class="bx bx-credit-card" aria-hidden="true"></i>
+            <h3>PSP &amp; Payment Processing</h3>
+            <p>Provider integrations — Mansa, Effie and Fuze — plus production payment debugging.</p>
+          </article>
+          <article class="domain-card reveal">
+            <i class="bx bx-link-alt" aria-hidden="true"></i>
+            <h3>Blockchain-Based Financial Workflows</h3>
+            <p>On-chain invoice functionality and blockchain transaction workflows inside financial products.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= BLOCKCHAIN ============================= -->
+    <section class="section" id="blockchain">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">Blockchain &amp; Web3</p>
+          <h2 class="section-title">Blockchain integration in financial products</h2>
+          <p class="section-sub">
+            I work as a software engineer integrating blockchain functionality into live fintech platforms —
+            transaction workflows, smart-contract interaction and on-chain event handling.
+          </p>
+        </header>
+
+        <div class="chain-grid">
+          <article class="chain-card reveal">
+            <span class="chain-mark" aria-hidden="true"><i class="bx bx-diamond"></i></span>
+            <h3>Ethereum</h3>
+            <p>Transaction workflows and smart-contract interaction within DeFa.</p>
+          </article>
+          <article class="chain-card reveal">
+            <span class="chain-mark" aria-hidden="true"><i class="bx bx-planet"></i></span>
+            <h3>Stellar</h3>
+            <p>On-chain workflows integrated into financing platform features.</p>
+          </article>
+          <article class="chain-card reveal">
+            <span class="chain-mark" aria-hidden="true"><i class="bx bx-shape-triangle"></i></span>
+            <h3>Starknet</h3>
+            <p>Smart-contract integration delivering on-chain invoice functionality in CredMate and InvoiceMate.</p>
+          </article>
+          <article class="chain-card reveal">
+            <span class="chain-mark" aria-hidden="true"><i class="bx bx-cube"></i></span>
+            <h3>ZigChain</h3>
+            <p>Smart-contract interaction and on-chain workflows in DeFa.</p>
+          </article>
+          <article class="chain-card reveal">
+            <span class="chain-mark" aria-hidden="true"><i class="bx bx-chip"></i></span>
+            <h3>EVM</h3>
+            <p>EVM-based blockchain functionality embedded in PSP payment workflows.</p>
+          </article>
         </div>
 
-        <div class="input-group-2">
-            <textarea name="" id="" cols="30"
-            rows="10" placeholder="Your Message">
-            </textarea>
-            <input type="submit" value="Send Message" class="btn">
+        <div class="capability-row reveal" aria-label="Blockchain capabilities">
+          <span class="capability"><i class="bx bx-file-blank" aria-hidden="true"></i> Smart-Contract Integration</span>
+          <span class="capability"><i class="bx bx-transfer-alt" aria-hidden="true"></i> Blockchain Transactions</span>
+          <span class="capability"><i class="bx bx-broadcast" aria-hidden="true"></i> On-Chain Events</span>
+          <span class="capability"><i class="bx bx-timer" aria-hidden="true"></i> Transaction Schedulers</span>
         </div>
-     </form>
-</section>
+      </div>
+    </section>
 
-<footer class="footer">
-    <div class="social">
-        <a href="https://www.facebook.com/muhammad.shazab.140" target="_blank"><i class="bx bxl-facebook"></i></a>
-            <a href="https://x.com/shazabtariq6517"><i class="bx bxl-twitter"></i></a>
-            <a href="#"><i class="bx bxl-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/shazab-tariq-4648b22a9/"><i class="bx bxl-linkedin"></i></a>
-            <a href="https://github.com/ShazabTariq"><i class="bx bxl-github"></i></a>
-    </div>
-    <ul class="list">
-       <li>
-        <a href="#">FAQ</a>
-       </li>
-       <li>
-        <a href="#services">Services</a>
-       </li>
-       <li>
-        <a href="#about">About Me</a>
-       </li>
-       <li>
+    <!-- ============================= SKILLS ============================= -->
+    <section class="section section-alt" id="skills">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">Technical Skills</p>
+          <h2 class="section-title">Technology stack</h2>
+          <p class="section-sub">Grouped by discipline, exactly as I use them in production.</p>
+        </header>
+
+        <div class="skill-grid">
+
+          <article class="skill-card reveal">
+            <div class="skill-head">
+              <span class="skill-icon" aria-hidden="true"><i class="bx bx-server"></i></span>
+              <h3>Backend</h3>
+            </div>
+            <ul class="chip-list">
+              <li class="chip">Node.js</li><li class="chip">Express.js</li><li class="chip">REST APIs</li>
+              <li class="chip">Backend Business Logic</li><li class="chip">Authentication &amp; Security</li>
+              <li class="chip">Event Handling</li><li class="chip">Transaction Schedulers</li>
+            </ul>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-head">
+              <span class="skill-icon" aria-hidden="true"><i class="bx bx-layout"></i></span>
+              <h3>Frontend</h3>
+            </div>
+            <ul class="chip-list">
+              <li class="chip">React.js</li><li class="chip">Next.js</li><li class="chip">TypeScript</li>
+              <li class="chip">JavaScript (ES6+)</li><li class="chip">HTML5</li><li class="chip">CSS3</li>
+              <li class="chip">Tailwind CSS</li><li class="chip">Material UI</li>
+            </ul>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-head">
+              <span class="skill-icon" aria-hidden="true"><i class="bx bx-data"></i></span>
+              <h3>Databases</h3>
+            </div>
+            <ul class="chip-list">
+              <li class="chip">MongoDB</li><li class="chip">MySQL</li><li class="chip">Supabase</li>
+            </ul>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-head">
+              <span class="skill-icon" aria-hidden="true"><i class="bx bx-cloud"></i></span>
+              <h3>Cloud &amp; DevOps</h3>
+            </div>
+            <ul class="chip-list">
+              <li class="chip">Google Cloud Platform</li><li class="chip">GKE</li><li class="chip">Kubernetes</li>
+              <li class="chip">Docker</li><li class="chip">Linux</li><li class="chip">CI/CD</li>
+              <li class="chip">Git/GitHub</li><li class="chip">Google Secret Manager</li>
+              <li class="chip">Azure Key Vault / KMS</li><li class="chip">SonarQube</li><li class="chip">MobaXterm</li>
+            </ul>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-head">
+              <span class="skill-icon" aria-hidden="true"><i class="bx bx-link-alt"></i></span>
+              <h3>Blockchain &amp; Web3</h3>
+            </div>
+            <ul class="chip-list">
+              <li class="chip">Ethereum</li><li class="chip">Stellar</li><li class="chip">Starknet</li>
+              <li class="chip">ZigChain</li><li class="chip">EVM</li><li class="chip">Smart-Contract Integration</li>
+              <li class="chip">Blockchain Transactions</li><li class="chip">On-Chain Events</li>
+            </ul>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-head">
+              <span class="skill-icon" aria-hidden="true"><i class="bx bx-credit-card-front"></i></span>
+              <h3>Fintech &amp; Payments</h3>
+            </div>
+            <ul class="chip-list">
+              <li class="chip">Invoice Financing</li><li class="chip">Murabaha Workflows</li>
+              <li class="chip">Conversion Models</li><li class="chip">Real-Time Payments</li>
+              <li class="chip">PSP</li><li class="chip">Settlement Workflows</li><li class="chip">Banking Integrations</li>
+            </ul>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-head">
+              <span class="skill-icon" aria-hidden="true"><i class="bx bx-plug"></i></span>
+              <h3>Integrations</h3>
+            </div>
+            <ul class="chip-list">
+              <li class="chip">Mansa</li><li class="chip">Effie</li><li class="chip">Fuze</li>
+              <li class="chip">Third-Party REST APIs</li>
+            </ul>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-head">
+              <span class="skill-icon" aria-hidden="true"><i class="bx bx-brain"></i></span>
+              <h3>AI</h3>
+              <span class="skill-status">Currently Learning</span>
+            </div>
+            <ul class="chip-list">
+              <li class="chip">AI Integration</li><li class="chip">AI Engineering</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= DEVOPS ============================= -->
+    <section class="section" id="devops">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">DevOps &amp; Cloud</p>
+          <h2 class="section-title">From commit to production</h2>
+          <p class="section-sub">
+            I do not stop at the API layer — I deploy, secure and support the services I build.
+          </p>
+        </header>
+
+        <div class="pipeline reveal" aria-label="Deployment pipeline: Code, Git and GitHub, CI/CD, Docker, Google Cloud Platform, GKE and Kubernetes, Production">
+          <div class="pipe-step"><i class="bx bx-code-alt" aria-hidden="true"></i><span>Code</span></div>
+          <span class="pipe-arrow" aria-hidden="true"><i class="bx bx-chevron-right"></i></span>
+          <div class="pipe-step"><i class="bx bxl-github" aria-hidden="true"></i><span>Git / GitHub</span></div>
+          <span class="pipe-arrow" aria-hidden="true"><i class="bx bx-chevron-right"></i></span>
+          <div class="pipe-step"><i class="bx bx-git-merge" aria-hidden="true"></i><span>CI/CD</span></div>
+          <span class="pipe-arrow" aria-hidden="true"><i class="bx bx-chevron-right"></i></span>
+          <div class="pipe-step"><i class="bx bxl-docker" aria-hidden="true"></i><span>Docker</span></div>
+          <span class="pipe-arrow" aria-hidden="true"><i class="bx bx-chevron-right"></i></span>
+          <div class="pipe-step"><i class="bx bx-cloud" aria-hidden="true"></i><span>GCP</span></div>
+          <span class="pipe-arrow" aria-hidden="true"><i class="bx bx-chevron-right"></i></span>
+          <div class="pipe-step"><i class="bx bx-been-here" aria-hidden="true"></i><span>GKE / Kubernetes</span></div>
+          <span class="pipe-arrow" aria-hidden="true"><i class="bx bx-chevron-right"></i></span>
+          <div class="pipe-step is-end"><i class="bx bx-rocket" aria-hidden="true"></i><span>Production</span></div>
+        </div>
+
+        <div class="devops-grid">
+          <article class="devops-card reveal">
+            <i class="bx bx-cloud" aria-hidden="true"></i>
+            <h3>Deployment &amp; Orchestration</h3>
+            <p>
+              Deployed and managed applications on GCP using GKE/Kubernetes, Docker and Linux VMs — working with
+              clusters, deployments, services and containers.
+            </p>
+            <div class="tag-row">
+              <span class="tag">GCP</span><span class="tag">GKE</span><span class="tag">Kubernetes</span>
+              <span class="tag">Docker</span><span class="tag">Linux VMs</span>
+            </div>
+          </article>
+
+          <article class="devops-card reveal">
+            <i class="bx bx-key" aria-hidden="true"></i>
+            <h3>Secrets &amp; Configuration</h3>
+            <p>
+              Managed environment configuration and secure secret/key management using Google Secret Manager and
+              Azure Key Vault / KMS.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Google Secret Manager</span><span class="tag">Azure Key Vault / KMS</span>
+              <span class="tag">Environment Config</span>
+            </div>
+          </article>
+
+          <article class="devops-card reveal">
+            <i class="bx bx-shield-quarter" aria-hidden="true"></i>
+            <h3>Code Quality &amp; Security</h3>
+            <p>
+              Used SonarQube for code quality and security analysis, and performed dependency and security scanning
+              to identify vulnerabilities.
+            </p>
+            <div class="tag-row">
+              <span class="tag">SonarQube</span><span class="tag">Dependency Scanning</span>
+              <span class="tag">Security Scanning</span>
+            </div>
+          </article>
+
+          <article class="devops-card reveal">
+            <i class="bx bx-pulse" aria-hidden="true"></i>
+            <h3>Production Support</h3>
+            <p>
+              Supported production deployments and troubleshooting across environments using application logs,
+              error tracking and monitoring.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Application Logs</span><span class="tag">Error Tracking</span>
+              <span class="tag">Monitoring</span>
+            </div>
+          </article>
+
+          <article class="devops-card reveal">
+            <i class="bx bx-git-pull-request" aria-hidden="true"></i>
+            <h3>Collaboration Workflow</h3>
+            <p>
+              Worked within Git/GitHub pull request and organization-level code review workflows prior to
+              deployment.
+            </p>
+            <div class="tag-row">
+              <span class="tag">GitHub Pull Requests</span><span class="tag">Code Review</span>
+              <span class="tag">Org-Level Workflows</span>
+            </div>
+          </article>
+
+          <article class="devops-card reveal">
+            <i class="bx bx-terminal" aria-hidden="true"></i>
+            <h3>CI/CD &amp; Remote Access</h3>
+            <p>
+              Assisted with CI/CD and deployment workflows across GCP and Kubernetes environments, using MobaXterm
+              for remote server and VM access.
+            </p>
+            <div class="tag-row">
+              <span class="tag">CI/CD</span><span class="tag">MobaXterm</span><span class="tag">Remote VM Access</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= PERSONAL PROJECTS ============================= -->
+    <section class="section section-alt" id="projects">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">Personal Projects</p>
+          <h2 class="section-title">Built outside of work</h2>
+          <p class="section-sub">Side projects where I explore ideas and interfaces on my own time.</p>
+        </header>
+
+        <div class="project-grid">
+          <article class="project-card reveal">
+            <span class="project-icon" aria-hidden="true"><i class="bx bx-book-reader"></i></span>
+            <h3>Study Byte</h3>
+            <p>
+              Free study-material platform for Punjab Board students in classes 9 to 12 — chapter-wise
+              notes, textbooks, past papers, guess papers and pairing schemes, all downloadable as PDFs.
+            </p>
+            <ul class="project-points">
+              <li>Library of past papers covering every Punjab board, filterable by board and year</li>
+              <li>Material organised by class, then subject, across ten core subjects</li>
+              <li>Search across notes, books, past papers and pairing schemes</li>
+              <li>Free accounts that unlock downloads and save a student&rsquo;s class and material</li>
+              <li>Exam preparation hub showing what is available per class and board</li>
+            </ul>
+            <a class="project-link" href="https://studybytepk.online/" target="_blank" rel="noopener noreferrer">
+              studybytepk.online <i class="bx bx-link-external" aria-hidden="true"></i>
+            </a>
+          </article>
+
+          <article class="project-card reveal">
+            <span class="project-icon" aria-hidden="true"><i class="bx bx-bowl-hot"></i></span>
+            <h3>Rock Pizza</h3>
+            <p>Pizza ordering website covering menu browsing and the order flow interface.</p>
+            <a class="project-link" href="https://rock-pizza-i7ax.vercel.app/" target="_blank" rel="noopener noreferrer">
+              rock-pizza-i7ax.vercel.app <i class="bx bx-link-external" aria-hidden="true"></i>
+            </a>
+          </article>
+
+          <article class="project-card reveal">
+            <span class="project-icon" aria-hidden="true"><i class="bx bx-phone-call"></i></span>
+            <h3>Call App</h3>
+            <p>
+              Full calling application with its own in-app call experience, replacing the default
+              dialler screen for both incoming and outgoing calls.
+            </p>
+            <ul class="project-points">
+              <li>Contacts list built into the app</li>
+              <li>Call history of incoming and outgoing calls</li>
+              <li>Call recording</li>
+              <li>Mute control during an active call</li>
+              <li>Custom call UI shown whenever a call starts or arrives</li>
+            </ul>
+          </article>
+
+          <article class="project-card reveal">
+            <span class="project-icon" aria-hidden="true"><i class="bx bx-cloud-drizzle"></i></span>
+            <h3>Weather App</h3>
+            <p>Weather application integrating a third-party weather API to display live conditions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= EDUCATION ============================= -->
+    <section class="section" id="education">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">Education</p>
+          <h2 class="section-title">Education &amp; certification</h2>
+        </header>
+
+        <div class="edu-layout">
+          <ol class="timeline timeline-edu">
+            <li class="tl-item reveal">
+              <span class="tl-dot" aria-hidden="true"></span>
+              <article class="tl-card">
+                <div class="tl-head">
+                  <div class="tl-headings">
+                    <h3 class="tl-role">BS in Computer Science (BSCS)</h3>
+                    <p class="tl-company"><i class="bx bx-book" aria-hidden="true"></i> Chenab College of Advanced Studies, Canal Road, Faisalabad</p>
+                  </div>
+                  <span class="tl-period is-current">2022 &ndash; Present</span>
+                </div>
+                <p class="tl-summary">In progress.</p>
+              </article>
+            </li>
+
+            <li class="tl-item reveal">
+              <span class="tl-dot" aria-hidden="true"></span>
+              <article class="tl-card">
+                <div class="tl-head">
+                  <div class="tl-headings">
+                    <h3 class="tl-role">Intermediate &ndash; Pre-Engineering</h3>
+                    <p class="tl-company"><i class="bx bx-book" aria-hidden="true"></i> Government Post Graduate College of Science, Samanabad, Faisalabad</p>
+                  </div>
+                  <span class="tl-period">2020 &ndash; 2022</span>
+                </div>
+              </article>
+            </li>
+
+            <li class="tl-item reveal">
+              <span class="tl-dot" aria-hidden="true"></span>
+              <article class="tl-card">
+                <div class="tl-head">
+                  <div class="tl-headings">
+                    <h3 class="tl-role">Matriculation &ndash; Science</h3>
+                    <p class="tl-company"><i class="bx bx-book" aria-hidden="true"></i> Government High School for Boys 144 R.B, Faisalabad</p>
+                  </div>
+                  <span class="tl-period">2018 &ndash; 2020</span>
+                </div>
+              </article>
+            </li>
+          </ol>
+
+          <aside class="edu-side">
+            <article class="side-card reveal">
+              <h3><i class="bx bx-certification" aria-hidden="true"></i> Certifications &amp; Courses</h3>
+              <div class="cert">
+                <p class="cert-name">Full Stack Development</p>
+                <p class="cert-meta">Gamica Cloud, Jinnah Colony, Faisalabad &middot; 2023</p>
+              </div>
+            </article>
+
+            <article class="side-card reveal">
+              <h3><i class="bx bx-globe" aria-hidden="true"></i> Languages</h3>
+              <ul class="lang-list">
+                <li><span>English</span></li>
+                <li><span>Urdu</span><span class="lang-level">Native</span></li>
+                <li><span>Punjabi</span><span class="lang-level">Native</span></li>
+              </ul>
+            </article>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= CONTACT ============================= -->
+    <section class="section section-alt" id="contact">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">Contact</p>
+          <h2 class="section-title">Let&rsquo;s work together</h2>
+          <p class="section-sub">
+            Open to senior engineering roles and backend, fintech, cloud or blockchain integration work.
+          </p>
+        </header>
+
+        <div class="contact-layout">
+          <div class="contact-info">
+            <a class="contact-item reveal" href="mailto:shazabtariq41@gmail.com">
+              <span class="contact-icon" aria-hidden="true"><i class="bx bx-envelope"></i></span>
+              <span class="contact-text"><strong>Email</strong>shazabtariq41@gmail.com</span>
+            </a>
+            <a class="contact-item reveal" href="tel:+923094055450">
+              <span class="contact-icon" aria-hidden="true"><i class="bx bx-phone"></i></span>
+              <span class="contact-text"><strong>Phone</strong>+92 309 4055450</span>
+            </a>
+            <a class="contact-item reveal" href="https://wa.me/923094055450" target="_blank" rel="noopener noreferrer">
+              <span class="contact-icon" aria-hidden="true"><i class="bx bxl-whatsapp"></i></span>
+              <span class="contact-text"><strong>WhatsApp</strong>+92 309 4055450</span>
+            </a>
+            <div class="contact-item is-static reveal">
+              <span class="contact-icon" aria-hidden="true"><i class="bx bx-map"></i></span>
+              <span class="contact-text"><strong>Location</strong>Faisalabad, Punjab, Pakistan</span>
+            </div>
+            <a class="contact-item reveal" href="https://www.linkedin.com/in/shazab-tariq-4648b22a9" target="_blank" rel="noopener noreferrer">
+              <span class="contact-icon" aria-hidden="true"><i class="bx bxl-linkedin"></i></span>
+              <span class="contact-text"><strong>LinkedIn</strong>in/shazab-tariq-4648b22a9</span>
+            </a>
+            <a class="contact-item reveal" href="https://github.com/ShazabTariq" target="_blank" rel="noopener noreferrer">
+              <span class="contact-icon" aria-hidden="true"><i class="bx bxl-github"></i></span>
+              <span class="contact-text"><strong>GitHub</strong>github.com/ShazabTariq</span>
+            </a>
+          </div>
+
+          <form class="contact-form reveal" id="contactForm" novalidate>
+            <div class="field-row">
+              <div class="field">
+                <label for="cf-name">Full name</label>
+                <input type="text" id="cf-name" name="name" autocomplete="name" required placeholder="Jane Doe">
+              </div>
+              <div class="field">
+                <label for="cf-email">Email</label>
+                <input type="email" id="cf-email" name="email" autocomplete="email" required placeholder="jane@company.com">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="cf-subject">Subject</label>
+              <input type="text" id="cf-subject" name="subject" required placeholder="Senior Backend Engineer role">
+            </div>
+
+            <div class="field">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" rows="6" required placeholder="Tell me a little about the role or project…"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+              <i class="bx bx-envelope" aria-hidden="true"></i> Compose Email
+            </button>
+
+            <p class="form-note" id="formNote" role="status" aria-live="polite">
+              This form opens a pre-filled message in your own email client — nothing is stored or sent by this site.
+              You can also email me directly at
+              <a href="mailto:shazabtariq41@gmail.com">shazabtariq41@gmail.com</a>.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================= FOOTER ============================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#home" class="logo" aria-label="Shazab Tariq — back to top">
+          <span class="logo-mark" aria-hidden="true">ST</span>
+          <span class="logo-text">Shazab<strong>Tariq</strong></span>
+        </a>
+        <p>Senior Software Engineer | Full Stack Developer</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#products">Products</a>
+        <a href="#skills">Skills</a>
+        <a href="#devops">DevOps</a>
         <a href="#contact">Contact</a>
-       </li>
-      
-    </ul>
-    <p class="copyright">
-        @ Shazab Tariq & All Right Reserved    </p>
-</footer>
+      </nav>
 
-    <script src="script.js"></script>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/shazab-tariq-4648b22a9" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><i class="bx bxl-linkedin" aria-hidden="true"></i></a>
+        <a href="https://github.com/ShazabTariq" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><i class="bx bxl-github" aria-hidden="true"></i></a>
+        <a href="https://x.com/shazabtariq6517" target="_blank" rel="noopener noreferrer" aria-label="X profile"><i class="bx bxl-twitter" aria-hidden="true"></i></a>
+        <a href="https://www.facebook.com/muhammad.shazab.140" target="_blank" rel="noopener noreferrer" aria-label="Facebook profile"><i class="bx bxl-facebook" aria-hidden="true"></i></a>
+        <a href="mailto:shazabtariq41@gmail.com" aria-label="Send an email"><i class="bx bx-envelope" aria-hidden="true"></i></a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Shazab Tariq. All Rights Reserved.</p>
+      <a href="#home" class="to-top" aria-label="Back to top">Back to top <i class="bx bx-up-arrow-alt" aria-hidden="true"></i></a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-</html> 
-
-
-
-
-
-
-
- 
+</html>

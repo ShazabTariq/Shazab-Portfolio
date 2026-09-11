@@ -4,15 +4,10 @@ FROM nginx:alpine
 # Remove default nginx website
 RUN rm -rf /usr/share/nginx/html/*
 
-# Copy your index.html to nginx folder
-COPY index.html /usr/share/nginx/html/
-COPY style.css /usr/share/nginx/html/
-COPY script.js /usr/share/nginx/html/
-COPY img /usr/share/nginx/html/img/
-
-COPY package.json /usr/share/nginx/html/packages
-
-
+# Copy the whole static site (see .dockerignore for what is excluded).
+# Copying the directory instead of listing files individually means new assets
+# — the CV PDF, extra images, favicons — get deployed without editing this file.
+COPY . /usr/share/nginx/html/
 
 # Expose port
 EXPOSE 80
